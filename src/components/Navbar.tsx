@@ -52,7 +52,7 @@ export function Navbar() {
 
             <div className="hidden items-center gap-3 lg:flex">
               <a
-                href="#contact"
+                href="/book"
                 className="text-sm font-medium text-ink/70 transition-colors hover:text-gold-500 ring-focus"
               >
                 Contact
@@ -66,7 +66,7 @@ export function Navbar() {
                 className="!px-5 !py-2.5"
               >
                 <Link to="/book">
-                  Book Strategy Call
+                  Claim Your Free Growth Audit
                 </Link>
               </Button>
             </div>
@@ -124,7 +124,7 @@ export function Navbar() {
                     to="/book"
                     onClick={() => setOpen(false)}
                   >
-                    Book Strategy Call
+                    Claim Your Free Growth Audit
                   </Link>
                 </Button>
               </div>
