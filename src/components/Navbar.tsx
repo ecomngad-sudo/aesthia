@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { NAV_ITEMS } from '@/lib/content';
 import { useScrollProgress } from '@/lib/hooks';
 import { Button } from '@/components/ui/Button';
@@ -16,14 +17,9 @@ export function Navbar() {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-x-0 top-0 z-50"
     >
-      <div
-        className={`transition-all duration-500 ${
-          scrolled ? 'py-3' : 'py-5'
-        }`}
-      >
+      <div className={`transition-all duration-500 ${scrolled ? 'py-3' : 'py-5'}`}>
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
 
-          {/* Desktop Navigation */}
           <nav
             className={`flex items-center justify-between rounded-full px-5 transition-all duration-500 ${
               scrolled
@@ -69,9 +65,9 @@ export function Navbar() {
                 icon
                 className="!px-5 !py-2.5"
               >
-                <a href="#contact">
+                <Link to="/book">
                   Book Strategy Call
-                </a>
+                </Link>
               </Button>
             </div>
 
@@ -92,7 +88,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -125,9 +120,12 @@ export function Navbar() {
                   icon
                   className="w-full"
                 >
-                  <a href="#contact" onClick={() => setOpen(false)}>
+                  <Link
+                    to="/book"
+                    onClick={() => setOpen(false)}
+                  >
                     Book Strategy Call
-                  </a>
+                  </Link>
                 </Button>
               </div>
 
