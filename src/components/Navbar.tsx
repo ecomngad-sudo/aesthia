@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { NAV_ITEMS } from '@/lib/content';
 import { useScrollProgress } from '@/lib/hooks';
 import { Button } from '@/components/ui/Button';
@@ -52,7 +51,7 @@ export function Navbar() {
 
             <div className="hidden items-center gap-3 lg:flex">
               <a
-                href="/book"
+                href="#contact"
                 className="text-sm font-medium text-ink/70 transition-colors hover:text-gold-500 ring-focus"
               >
                 Contact
@@ -65,9 +64,9 @@ export function Navbar() {
                 icon
                 className="!px-5 !py-2.5"
               >
-                <Link to="/book">
+                <a href="#contact">
                   Claim Your Free Growth Audit
-                </Link>
+                </a>
               </Button>
             </div>
 
@@ -120,12 +119,12 @@ export function Navbar() {
                   icon
                   className="w-full"
                 >
-                  <Link
-                    to="/book"
+                  <a
+                    href="#contact"
                     onClick={() => setOpen(false)}
                   >
                     Claim Your Free Growth Audit
-                  </Link>
+                  </a>
                 </Button>
               </div>
 
