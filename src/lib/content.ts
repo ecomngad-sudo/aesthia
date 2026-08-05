@@ -257,11 +257,11 @@ export const TESTIMONIALS: Testimonial[] = [
       'Across three locations we were invisible on Google. Now we own the map pack. The ROI is not even close — this is the best business decision we have made in five years.',
   },
  {
-  name: 'Dr. Priya Anand',
+  name:  'Dr. Michael Carter',
   role: 'Medical Director, Élysia Skin & Laser',
- image:
-'https://images.unsplash.com/photo-1591604028308-9fda8b5e4b4f?auto=format&fit=crop&w=400&q=80',
- quote:
+  image:
+    'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80',
+  quote:
     'The level of taste and strategy is something I did not know existed in marketing. Our brand finally looks as premium online as it feels in person — and the bookings prove it.',
 },
 ];
