@@ -260,7 +260,7 @@ export const TESTIMONIALS: Testimonial[] = [
   name: 'Dr. Priya Anand',
   role: 'Medical Director, Élysia Skin & Laser',
   image:
-    'https://images.unsplash.com/photo-1559839734-2b71fb19d3a6?auto=format&fit=crop&w=400&q=80',
+    'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80',
   quote:
     'The level of taste and strategy is something I did not know existed in marketing. Our brand finally looks as premium online as it feels in person — and the bookings prove it.',
 },
