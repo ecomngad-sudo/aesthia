@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   Sparkles,
   TrendingUp,
@@ -9,6 +10,7 @@ import {
   ArrowUpRight,
   CheckCircle2,
 } from 'lucide-react';
+
 import { Button, Pill } from '@/components/ui/Button';
 import { easeLux } from '@/lib/motion';
 
@@ -81,12 +83,12 @@ export function Hero() {
               transition={{ duration: 0.8, ease: easeLux, delay: 0.32 }}
               className="flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <Button size="lg" variant="gold" icon>
-                <a href="#contact">Book Your Strategy Call</a>
-              </Button>
+             <Button size="lg" variant="gold" icon>
+  <Link to="/book">Claim Your Free Growth Audit</Link>
+</Button>
               <Button size="lg" variant="glass">
-                <a href="#audit">Claim Your Free Audit</a>
-              </Button>
+  <Link to="/book">Claim Your Free Audit</Link>
+</Button>
             </motion.div>
 
             <motion.div
