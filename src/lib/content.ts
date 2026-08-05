@@ -256,14 +256,14 @@ export const TESTIMONIALS: Testimonial[] = [
     quote:
       'Across three locations we were invisible on Google. Now we own the map pack. The ROI is not even close — this is the best business decision we have made in five years.',
   },
-  {
-    name: 'Dr. Priya Anand',
-    role: 'Medical Director, Élysia Skin & Laser',
-    image:
-      'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80',
-    quote:
-      'The level of taste and strategy is something I did not know existed in marketing. Our brand finally looks as premium online as it feels in person — and the bookings prove it.',
-  },
+ {
+  name: 'Dr. Priya Anand',
+  role: 'Medical Director, Élysia Skin & Laser',
+  image:
+    'https://images.unsplash.com/photo-1559839734-2b71fb19d3a6?auto=format&fit=crop&w=400&q=80',
+  quote:
+    'The level of taste and strategy is something I did not know existed in marketing. Our brand finally looks as premium online as it feels in person — and the bookings prove it.',
+},
 ];
 
 export interface Faq {
