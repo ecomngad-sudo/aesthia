@@ -176,10 +176,12 @@ export const CASE_STUDIES: CaseStudy[] = [
   name: 'Elite Aesthetic Clinic',
   city: 'Local SEO Growth System',
   image:
-image:
-'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80',
-  challenge:
-    'The clinic was invisible on Google Maps despite offering premium treatments and an excellent patient experience.',
+city: 'Local SEO Growth System',
+
+image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80',
+
+challenge:
+'The clinic was invisible on Google Maps despite offering premium treatments and an excellent patient experience.',
 
   solution:
     'We optimized the Google Business Profile, improved local SEO, strengthened reviews, and redesigned the patient journey.',
