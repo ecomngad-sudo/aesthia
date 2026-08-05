@@ -176,8 +176,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   name: 'Elite Aesthetic Clinic',
   city: 'Local SEO Growth System',
   image:
-    'https://images.unsplash.com/photo-1616397906425-fa8d6c5c8dab?auto=format&fit=crop&w=1200&q=80',
-
+image:
+'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80',
   challenge:
     'The clinic was invisible on Google Maps despite offering premium treatments and an excellent patient experience.',
 
@@ -243,8 +243,8 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Dr. Elena Vasquez',
     role: 'Founder, Lumière Aesthetics',
-    image:
-      'https://images.unsplash.com/photo-1559839734-2b71fb19d3a6?auto=format&fit=crop&w=400&q=80',
+   image:
+'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80',
     quote:
       'Aesthia did not build us a website. They built us a patient acquisition system. Our consult calendar has never been this full — and the patients we are attracting are exactly the premium clients we wanted.',
   },
