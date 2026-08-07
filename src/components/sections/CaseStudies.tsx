@@ -76,14 +76,14 @@ function CaseCard({
         </div>
 
         {/* Content */}
-        <div className="flex flex-col justify-center gap-5 p-8 sm:p-10 [direction:ltr]">
-          <div className="grid grid-cols-3 gap-3">
+        <div className="flex flex-col justify-center gap-5 p-6 sm:p-8 md:p-10 [direction:ltr]">
+          <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-3">
            {cs.metrics.map((m) => (
   <div
     key={m.label}
-    className="rounded-2xl border border-line bg-gradient-to-br from-white to-canvas-warm/70 px-5 py-4 transition-all duration-300 hover:border-gold-500/20 hover:shadow-md"
+    className="rounded-2xl border border-line bg-gradient-to-br from-white to-canvas-warm/70 px-4 py-3.5 transition-all duration-300 hover:border-gold-500/20 hover:shadow-md sm:px-5 sm:py-4"
   >
-    <div className="text-3xl font-bold tracking-tight text-gold-500">
+    <div className="text-2xl font-bold tracking-tight text-gold-500 sm:text-3xl">
   {m.value}
 </div>
 

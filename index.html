@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
     <meta name="theme-color" content="#111111" />
+    <meta name="color-scheme" content="light dark" />
 
     <title>Aesthia Studio — Luxury Digital Growth for Med Spas</title>
     <meta name="description" content="Aesthia Studio builds complete digital growth systems for premium Med Spas in the United States. Increase bookings, dominate Google, and attract premium clients." />
@@ -12,19 +17,28 @@
     <meta name="author" content="Aesthia Studio" />
     <link rel="canonical" href="https://aesthiastudio.com/" />
 
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Aesthia Studio" />
     <meta property="og:title" content="Aesthia Studio — Luxury Digital Growth for Med Spas" />
     <meta property="og:description" content="We build complete digital growth systems that increase bookings, dominate Google and create premium online experiences for Med Spas." />
     <meta property="og:url" content="https://aesthiastudio.com/" />
     <meta property="og:image" content="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Luxury med spa interior representing premium aesthetic clinic growth" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aesthia Studio — Luxury Digital Growth for Med Spas" />
     <meta name="twitter:description" content="Complete digital growth systems for premium Med Spas. Bookings, Google visibility, premium clients." />
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:image:alt" content="Luxury med spa interior representing premium aesthetic clinic growth" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,17 +49,48 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Aesthia Studio",
-      "description": "Luxury digital growth agency for Med Spas in the United States. Complete growth systems: luxury websites, local SEO, booking automation, AI patient assistants.",
-      "url": "https://aesthiastudio.com/",
-      "areaServed": "US",
-      "knowsAbout": ["Med Spa Marketing", "Local SEO", "Luxury Web Design", "Booking Automation", "AI Patient Assistants", "Google Business Optimization"],
-      "priceRange": "$$$$",
-      "audience": {
-        "@type": "BusinessAudience",
-        "name": "Premium Med Spa owners and luxury aesthetic clinics in the United States"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://aesthiastudio.com/#website",
+          "url": "https://aesthiastudio.com/",
+          "name": "Aesthia Studio",
+          "description": "Luxury digital growth agency for premium Med Spas in the United States.",
+          "inLanguage": "en-US",
+          "publisher": { "@id": "https://aesthiastudio.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://aesthiastudio.com/#organization",
+          "name": "Aesthia Studio",
+          "url": "https://aesthiastudio.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://aesthiastudio.com/favicon.svg"
+          },
+          "email": "hello@aesthia.com",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://aesthiastudio.com/#service",
+          "name": "Aesthia Studio",
+          "description": "Luxury digital growth agency for Med Spas in the United States. Complete growth systems: luxury websites, local SEO, booking automation, AI patient assistants.",
+          "url": "https://aesthiastudio.com/",
+          "provider": { "@id": "https://aesthiastudio.com/#organization" },
+          "areaServed": "US",
+          "knowsAbout": ["Med Spa Marketing", "Local SEO", "Luxury Web Design", "Booking Automation", "AI Patient Assistants", "Google Business Optimization"],
+          "priceRange": "$$$$",
+          "audience": {
+            "@type": "BusinessAudience",
+            "name": "Premium Med Spa owners and luxury aesthetic clinics in the United States"
+          }
+        }
+      ]
     }
     </script>
   </head>

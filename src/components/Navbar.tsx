@@ -32,7 +32,7 @@ export function Navbar() {
               aria-label="Aesthia Studio home"
             >
               <Logo />
-              <span className="text-[15px] font-semibold tracking-tight text-ink">
+              <span className="text-sm font-semibold tracking-tight text-ink sm:text-[15px]">
                 Aesthia Studio
               </span>
             </a>

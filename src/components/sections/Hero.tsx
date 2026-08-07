@@ -81,14 +81,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.32 }}
-              className="flex flex-col gap-3 sm:flex-row sm:items-center"
+              className="flex w-full flex-col gap-3 sm:flex-row sm:items-center"
             >
-             <Button size="lg" variant="gold" icon>
-  <Link to="/book">Claim Your Free Growth Audit</Link>
-</Button>
-              <Button size="lg" variant="glass">
-  <Link to="/book">Claim Your Free Audit</Link>
-</Button>
+              <Button size="lg" variant="gold" icon className="w-full sm:w-auto">
+                <Link to="/book">Claim Your Free Growth Audit</Link>
+              </Button>
+              <Button size="lg" variant="glass" className="w-full sm:w-auto">
+                <Link to="/book">Claim Your Free Audit</Link>
+              </Button>
             </motion.div>
 
             <motion.div
@@ -114,7 +114,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.94, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.1, ease: easeLux, delay: 0.25 }}
-            className="relative mx-auto w-full max-w-[560px] lg:mx-0"
+            className="relative mx-auto w-full max-w-[560px] overflow-hidden lg:mx-0"
           >
             <HeroDashboard />
           </motion.div>
@@ -129,12 +129,12 @@ export function Hero() {
 
 function HeroDashboard() {
   return (
-    <div className="relative h-[520px] sm:h-[560px]">
+    <div className="relative h-[380px] min-[480px]:h-[460px] sm:h-[520px] lg:h-[560px]">
       {/* Main dashboard card */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 7, ease: 'easeInOut', repeat: Infinity }}
-        className="absolute left-1/2 top-1/2 w-[88%] -translate-x-1/2 -translate-y-1/2"
+        className="absolute left-1/2 top-1/2 w-[92%] min-[480px]:w-[88%] -translate-x-1/2 -translate-y-1/2"
       >
         <div className="card-luxury rounded-4xl p-5 shadow-luxury-lg">
           {/* Browser chrome */}
@@ -196,9 +196,9 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, -14, 0] }}
         transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity, delay: 0.4 }}
-        className="absolute -left-2 top-6 sm:left-0"
+        className="absolute -left-1 top-4 hidden min-[480px]:block sm:left-0 sm:top-6"
       >
-        <div className="card-luxury w-44 rounded-2xl p-3.5 shadow-luxury">
+        <div className="card-luxury w-36 rounded-2xl p-3 shadow-luxury min-[480px]:w-44 min-[480px]:p-3.5">
           <div className="flex items-center gap-2">
             <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink text-gold-400">
               <Bot className="h-4 w-4" />
@@ -226,7 +226,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 7.5, ease: 'easeInOut', repeat: Infinity, delay: 0.8 }}
-        className="absolute -right-1 top-24 sm:right-0"
+        className="absolute -right-1 top-20 hidden min-[400px]:block sm:right-0 sm:top-24"
       >
         <div className="card-luxury w-40 rounded-2xl p-3.5 shadow-luxury">
           <div className="flex items-center gap-2">
@@ -247,7 +247,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 6.5, ease: 'easeInOut', repeat: Infinity, delay: 1.2 }}
-        className="absolute -left-1 bottom-6 sm:left-2"
+        className="absolute -left-1 bottom-4 hidden min-[520px]:block sm:left-2 sm:bottom-6"
       >
         <div className="card-luxury w-44 rounded-2xl p-3.5 shadow-luxury">
           <div className="flex items-center justify-between">
@@ -277,7 +277,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, 14, 0] }}
         transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity, delay: 0.6 }}
-        className="absolute -right-2 bottom-10 sm:right-1"
+        className="absolute -right-1 bottom-8 hidden min-[520px]:block sm:right-1 sm:bottom-10"
       >
         <div className="card-luxury w-40 rounded-2xl p-3.5 shadow-luxury">
           <div className="flex items-center gap-2">

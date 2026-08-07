@@ -1,4 +1,10 @@
-import { forwardRef, type ReactNode } from 'react';
+import {
+  forwardRef,
+  cloneElement,
+  isValidElement,
+  type ReactNode,
+  type ReactElement,
+} from 'react';
 import { motion, type HTMLMotionProps } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -10,6 +16,7 @@ interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
   size?: Size;
   children: ReactNode;
   icon?: boolean;
+  asChild?: boolean;
 }
 
 const base =
@@ -31,20 +38,54 @@ const sizes: Record<Size, string> = {
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'gold', size = 'md', className = '', children, icon = false, ...props }, ref) => {
+  (
+    {
+      variant = 'gold',
+      size = 'md',
+      className = '',
+      children,
+      icon = false,
+      asChild = false,
+      ...props
+    },
+    ref
+  ) => {
+    const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
+
+    const inner = (
+      <>
+        {asChild && isValidElement(children)
+          ? (children as ReactElement).props.children
+          : children}
+        {icon && (
+          <ArrowRight
+            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+            strokeWidth={2.25}
+          />
+        )}
+      </>
+    );
+
+    if (asChild && isValidElement(children)) {
+      const child = children as ReactElement;
+      return cloneElement(child, {
+        ...props,
+        className: [classes, child.props.className].filter(Boolean).join(' '),
+        ref,
+        children: (
+          <span className="relative z-10 flex items-center gap-2">{inner}</span>
+        ),
+      });
+    }
+
     return (
       <motion.button
         ref={ref}
         whileTap={{ scale: 0.97 }}
-        className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+        className={classes}
         {...props}
       >
-        <span className="relative z-10 flex items-center gap-2">
-          {children}
-          {icon && (
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.25} />
-          )}
-        </span>
+        <span className="relative z-10 flex items-center gap-2">{inner}</span>
       </motion.button>
     );
   }

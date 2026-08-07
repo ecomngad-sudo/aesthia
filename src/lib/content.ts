@@ -140,7 +140,7 @@ export const COMPARISON: ComparisonRow[] = [
   { label: 'Business Growth', generic: 'You get a website', aesthia: 'You get a measurable revenue system' },
 ];
 
-export interface Study {
+export interface CaseStudy {
   name: string;
   city: string;
   image: string;
