@@ -18,7 +18,6 @@ export function Navbar() {
     >
       <div className={`transition-all duration-500 ${scrolled ? 'py-3' : 'py-5'}`}>
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-
           <nav
             className={`flex items-center justify-between rounded-full px-5 transition-all duration-500 ${
               scrolled
@@ -58,21 +57,29 @@ export function Navbar() {
               </a>
 
               <Button
-  size="sm"
-  variant="gold"
-  icon
-  className="!px-5 !py-2.5"
-  onClick={() => {
-    window.location.href = "#contact";
-  }}
->
-  Claim Your Free Growth Audit
-</Button>
+                size="sm"
+                variant="gold"
+                icon
+                className="!px-5 !py-2.5"
+                onClick={() => {
+                  window.location.href = '#contact';
+                }}
+              >
+                Claim Your Free Growth Audit
+              </Button>
             </div>
 
-           
+            {/* Mobile menu toggle */}
+            <button
+              type="button"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+              onClick={() => setOpen(!open)}
+              className="lg:hidden rounded-full p-2 text-ink/60 hover:bg-ink/5 hover:text-ink transition-colors"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </nav>
-
         </div>
       </div>
 
@@ -86,7 +93,6 @@ export function Navbar() {
             className="mx-auto max-w-7xl px-5 sm:px-8 lg:hidden"
           >
             <div className="glass mt-2 rounded-3xl p-4 shadow-luxury">
-
               <div className="flex flex-col">
                 {NAV_ITEMS.map((item) => (
                   <a
@@ -100,32 +106,22 @@ export function Navbar() {
                 ))}
               </div>
 
-             <div className="mt-3 border-t border-line pt-3">
-  <Button
-    size="md"
-    variant="gold"
-    icon
-    className="w-full"
-    onClick={() => {
-      setOpen(false);
-      window.location.href = "#contact";
-    }}
-  >
-    Claim Your Free Growth Audit
-  </Button>
-</div>
+              <div className="mt-3 border-t border-line pt-3">
                 <Button
                   size="md"
                   variant="gold"
                   icon
                   className="w-full"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                    window.location.href = '#contact';
+                  }}
                 >
                   Claim Your Free Growth Audit
                 </Button>
               </div>
-
-            </motion.div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.header>

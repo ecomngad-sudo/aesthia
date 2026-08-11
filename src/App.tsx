@@ -13,6 +13,7 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { Faq } from '@/components/sections/Faq';
 import { FinalCta } from '@/components/sections/FinalCta';
 import { Footer } from '@/components/sections/Footer';
+import { FreeAuditModal } from '@/components/modals/FreeAuditModal';
 
 import Book from './pages/Book';
 import Privacy from './pages/Privacy';
@@ -64,6 +65,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <FreeAuditModal />
     </div>
   );
 }
