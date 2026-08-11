@@ -166,11 +166,11 @@ export function FreeAuditModal() {
             className="fixed inset-0 z-[101] flex items-center justify-center p-4"
             onClick={e => e.stopPropagation()}
           >
-            <div className="relative w-full max-w-md rounded-3xl border border-line bg-white/80 p-6 sm:p-8 shadow-luxury-xl backdrop-blur-xl">
+            <div className="relative w-[520px] h-[520px] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] overflow-y-auto rounded-3xl border border-line bg-white/80 p-6 sm:p-8 shadow-luxury-xl backdrop-blur-xl">
               {/* Close button */}
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 rounded-full p-1.5 text-ink/50 hover:bg-ink/5 transition-colors"
+                className="absolute top-4 right-4 rounded-full p-1.5 text-ink/80 hover:bg-ink/10 hover:text-ink transition-colors"
                 aria-label="Close modal"
               >
                 <X className="h-5 w-5" />
