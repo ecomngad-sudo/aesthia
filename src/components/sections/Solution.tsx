@@ -27,7 +27,7 @@ const ICONS: Record<string, LucideIcon> = {
 
 export function Solution() {
   return (
-    <section id="solution" className="relative py-24 sm:py-32">
+    <section id="services" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           align="center"
@@ -52,6 +52,7 @@ export function Solution() {
             return (
               <motion.div
                 key={s.title}
+                id={s.id}
                 variants={itemFadeUp}
                 className={`group relative overflow-hidden rounded-3xl border border-line p-7 transition-all duration-300 hover:shadow-luxury ${
                   s.accent

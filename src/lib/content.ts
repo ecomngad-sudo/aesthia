@@ -4,10 +4,10 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Services', href: '#solution' },
+  { label: 'Services', href: '#services' },
   { label: 'Results', href: '#case-studies' },
   { label: 'Process', href: '#process' },
-  { label: 'About', href: '#why' },
+  { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -64,6 +64,7 @@ export const PROBLEMS: Problem[] = [
 ];
 
 export interface Solution {
+  id?: string;
   icon: string;
   title: string;
   description: string;
@@ -73,6 +74,7 @@ export interface Solution {
 
 export const SOLUTIONS: Solution[] = [
   {
+    id: 'luxury-websites',
     icon: 'MonitorSmartphone',
     title: 'Luxury Website Architecture',
     description:
@@ -81,12 +83,14 @@ export const SOLUTIONS: Solution[] = [
     accent: true,
   },
   {
+    id: 'local-seo',
     icon: 'MapPin',
     title: 'Local SEO',
     description: 'Own the map pack for "med spa" + your city and capture high-intent local searches.',
     span: 'lg:col-span-2',
   },
   {
+    id: 'google-business',
     icon: 'Building2',
     title: 'Google Business Optimization',
     description: 'A polished profile that ranks, converts, and builds trust at first glance.',
@@ -99,12 +103,14 @@ export const SOLUTIONS: Solution[] = [
     span: '',
   },
   {
+    id: 'ai-booking',
     icon: 'Sparkles',
     title: 'AI Patient Assistant',
     description: 'A 24/7 concierge that answers questions, qualifies leads, and books consultations.',
     span: 'lg:col-span-2',
   },
   {
+    id: 'review-automation',
     icon: 'Star',
     title: 'Review Automation',
     description: 'Steadily grow a 5-star reputation on autopilot across Google and RealSelf.',

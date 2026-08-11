@@ -199,24 +199,27 @@ function HeroDashboard() {
         className="absolute -left-1 top-4 hidden min-[480px]:block sm:left-0 sm:top-6"
       >
         <div className="card-luxury w-36 rounded-2xl p-3 shadow-luxury min-[480px]:w-44 min-[480px]:p-3.5">
-          <div className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink text-gold-400">
-              <Bot className="h-4 w-4" />
-            </span>
-            <div>
-              <div className="text-[10px] font-semibold text-ink">AI Assistant</div>
-              <div className="text-[9px] text-ink/50">Online · 24/7</div>
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink text-gold-400">
+                <Bot className="h-4 w-4" />
+              </span>
+              <div>
+                <div className="text-[10px] font-semibold text-ink">AI Assistant</div>
+                <div className="text-[9px] text-ink/50">Online · 24/7</div>
+              </div>
             </div>
+            <span className="text-[8px] font-medium text-ink/40">AI-powered demo</span>
           </div>
           <div className="mt-2.5 space-y-1.5">
             <div className="max-w-[88%] rounded-xl rounded-tl-sm bg-ink/[0.05] px-2.5 py-1.5 text-[9.5px] text-ink/70">
-              Hi! Looking to book a consultation?
+              Hi! How can I help you today?
             </div>
             <div className="ml-auto max-w-[88%] rounded-xl rounded-tr-sm bg-ink px-2.5 py-1.5 text-[9.5px] text-white">
-              Yes, for next Tuesday
+              I'd like to book a consultation.
             </div>
-            <div className="max-w-[92%] rounded-xl rounded-tl-sm bg-gold-100/70 px-2.5 py-1.5 text-[9.5px] text-ink/80">
-              Booked — Tue 11:30am with Dr. Vasquez
+            <div className="max-w-[92%] rounded-xl rounded-tl-sm bg-ink/[0.05] px-2.5 py-1.5 text-[9.5px] text-ink/70">
+              Absolutely. I can help you find an available time.
             </div>
           </div>
         </div>

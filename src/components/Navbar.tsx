@@ -32,7 +32,7 @@ export function Navbar() {
               aria-label="Aesthia Studio home"
             >
               <Logo />
-              <span className="text-sm font-semibold tracking-tight text-ink sm:text-[15px]">
+              <span className="text-[15px] font-semibold tracking-tight text-ink">
                 Aesthia Studio
               </span>
             </a>
@@ -58,30 +58,19 @@ export function Navbar() {
               </a>
 
               <Button
-                asChild
-                size="sm"
-                variant="gold"
-                icon
-                className="!px-5 !py-2.5"
-              >
-                <a href="#contact">
-                  Claim Your Free Growth Audit
-                </a>
-              </Button>
+  size="sm"
+  variant="gold"
+  icon
+  className="!px-5 !py-2.5"
+  onClick={() => {
+    window.location.href = "#contact";
+  }}
+>
+  Claim Your Free Growth Audit
+</Button>
             </div>
 
-            <button
-              onClick={() => setOpen(!open)}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-ink lg:hidden ring-focus"
-              aria-label={open ? 'Close menu' : 'Open menu'}
-              aria-expanded={open}
-            >
-              {open ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
+           
           </nav>
 
         </div>
@@ -111,25 +100,32 @@ export function Navbar() {
                 ))}
               </div>
 
-              <div className="mt-3 border-t border-line pt-3">
+             <div className="mt-3 border-t border-line pt-3">
+  <Button
+    size="md"
+    variant="gold"
+    icon
+    className="w-full"
+    onClick={() => {
+      setOpen(false);
+      window.location.href = "#contact";
+    }}
+  >
+    Claim Your Free Growth Audit
+  </Button>
+</div>
                 <Button
-                  asChild
                   size="md"
                   variant="gold"
                   icon
                   className="w-full"
+                  onClick={() => setOpen(false)}
                 >
-                  <a
-                    href="#contact"
-                    onClick={() => setOpen(false)}
-                  >
-                    Claim Your Free Growth Audit
-                  </a>
+                  Claim Your Free Growth Audit
                 </Button>
               </div>
 
-            </div>
-          </motion.div>
+            </motion.div>
         )}
       </AnimatePresence>
     </motion.header>

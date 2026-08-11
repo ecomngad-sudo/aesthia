@@ -15,6 +15,9 @@ import { FinalCta } from '@/components/sections/FinalCta';
 import { Footer } from '@/components/sections/Footer';
 
 import Book from './pages/Book';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
 
 export default function App() {
   const { scrollYProgress } = useScroll();
@@ -54,6 +57,9 @@ export default function App() {
           />
 
           <Route path="/book" element={<Book />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookies" element={<Cookies />} />
         </Routes>
       </main>
 
