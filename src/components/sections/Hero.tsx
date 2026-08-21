@@ -28,7 +28,7 @@ export function Hero() {
           disablePictureInPicture
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/hero-bg.mp4.mp4" type="video/mp4" />
+          <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
 
         {/* 2. Dark Overlay for Text Readability */}
