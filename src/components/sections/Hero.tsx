@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -15,21 +16,32 @@ import { Button, Pill } from '@/components/ui/Button';
 import { easeLux } from '@/lib/motion';
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((error) => {
+        console.log("Autoplay issue prevented video playback:", error);
+      });
+    }
+  }, []);
+
   return (
     <section id="top" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
       {/* Ambient background with Video */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* Background Video */}
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          src="/hero-bg.mp4.mp4"
           className="absolute inset-0 h-full w-full object-cover opacity-60"
-        >
-          <source src="/hero-bg.mp4.mp4" type="video/mp4" />
-          <source src="/hero-bg.mp4" type="video/mp4" />
-        </video>
+        />
 
         {/* Clean dark overlay for readability without fully blocking the video */}
         <div className="absolute inset-0 bg-black/40" />
