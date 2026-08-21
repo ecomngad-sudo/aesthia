@@ -19,25 +19,26 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
       {/* Ambient background with Video */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        {/* 1. Background Video */}
+        {/* Background Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          disablePictureInPicture
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-60"
         >
+          <source src="/hero-bg.mp4.mp4" type="video/mp4" />
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
 
-        {/* 2. Dark Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-black/50" />
+        {/* Clean dark overlay for readability without fully blocking the video */}
+        <div className="absolute inset-0 bg-black/40" />
 
-        {/* 3. Decorative subtle tint & blurs */}
-        <div className="absolute inset-0 bg-gradient-to-b from-canvas-cream/20 via-canvas/20 to-canvas/20" />
-        <div className="absolute -top-40 left-1/2 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/30 blur-[120px]" />
+        {/* Subtle glow accents */}
+        <div className="absolute -top-40 left-1/2 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/20 blur-[120px]" />
         <div className="absolute right-0 top-40 h-[420px] w-[420px] rounded-full bg-success/10 blur-[120px]" />
+        
+        {/* Light grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
