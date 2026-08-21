@@ -17,16 +17,32 @@ import { easeLux } from '@/lib/motion';
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
-      {/* Ambient background */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-canvas-cream via-canvas to-canvas" />
-        <div className="absolute -top-40 left-1/2 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/40 blur-[120px]" />
+      {/* Ambient background with Video */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {/* 1. Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/hero-bg.mp4.mp4" type="video/mp4" />
+        </video>
+
+        {/* 2. Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* 3. Decorative subtle tint & blurs */}
+        <div className="absolute inset-0 bg-gradient-to-b from-canvas-cream/20 via-canvas/20 to-canvas/20" />
+        <div className="absolute -top-40 left-1/2 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/30 blur-[120px]" />
         <div className="absolute right-0 top-40 h-[420px] w-[420px] rounded-full bg-success/10 blur-[120px]" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px)',
+              'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
             backgroundSize: '64px 64px',
             maskImage: 'radial-gradient(ellipse 80% 60% at 50% 30%, #000, transparent)',
             WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 30%, #000, transparent)',
@@ -44,10 +60,12 @@ export function Hero() {
               transition={{ duration: 0.7, ease: easeLux }}
             >
               <Pill
-                icon={<span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-400 opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-500" />
-                </span>}
+                icon={
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-400 opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-500" />
+                  </span>
+                }
               >
                 Med Spa Growth Partner · USA
               </Pill>
@@ -70,7 +88,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.2 }}
-              className="max-w-xl text-lg leading-relaxed text-ink/65 text-pretty"
+              className="max-w-xl text-lg leading-relaxed text-ink/80 text-pretty"
             >
               We build complete digital growth systems that increase bookings,
               dominate Google, and create premium online experiences — engineered
@@ -95,7 +113,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-ink/55"
+              className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-ink/75"
             >
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-success" /> No long contracts
