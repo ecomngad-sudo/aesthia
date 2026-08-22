@@ -53,11 +53,10 @@ export function Hero() {
             loop
             playsInline
             preload="auto"
-            poster={fallbackImage}
             src="/hero-bg.mp4"
             onError={() => setVideoFailed(true)}
             onPlaying={() => setIsPlaying(true)}
-            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
+            className="absolute inset-0 h-full w-full object-cover bg-black transition-opacity duration-700"
           />
         )}
 
