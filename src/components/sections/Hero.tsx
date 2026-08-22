@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -17,45 +17,56 @@ import { easeLux } from '@/lib/motion';
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const fallbackImage =
+    'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80';
 
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && !videoFailed) {
       videoRef.current.defaultMuted = true;
       videoRef.current.muted = true;
       videoRef.current.play().catch((error) => {
         console.log("Autoplay issue prevented video playback:", error);
       });
     }
-  }, []);
+  }, [videoFailed]);
 
   return (
-    <section id="top" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
-      {/* Background Video Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      <video
-  ref={videoRef}
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="auto"
-  className="absolute inset-0 h-full w-full object-cover opacity-60 z-0 pointer-events-none"
->
-  <source 
-    src="https://res.cloudinary.com/d7lgzoqr/video/upload/q_auto,f_auto/v1787356183/hero-bg.mp4" 
-    type="video/mp4" 
-  />
-</video>
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/40" />
+    <section
+      id="top"
+      className="relative overflow-hidden bg-ink pt-28 text-white sm:pt-32 lg:pt-36"
+      style={{
+        backgroundImage: `linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.72)), url(${fallbackImage})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+      }}
+    >
+      {/* Ambient background with video */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {!videoFailed && (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={fallbackImage}
+            src="/hero-bg.mp4"
+            onError={() => setVideoFailed(true)}
+            className="absolute inset-0 h-full w-full object-cover -z-10"
+          />
+        )}
+
+        {/* Dark overlay keeps copy and CTAs readable above the motion video */}
+        <div className="absolute inset-0 z-0 bg-black/35" />
 
         {/* Subtle glow accents */}
-        <div className="absolute -top-40 left-1/2 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/20 blur-[120px]" />
-        <div className="absolute right-0 top-40 h-[420px] w-[420px] rounded-full bg-success/10 blur-[120px]" />
+        <div className="absolute -top-40 left-1/2 z-0 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/20 blur-[120px]" />
+        <div className="absolute right-0 top-40 z-0 h-[420px] w-[420px] rounded-full bg-success/10 blur-[120px]" />
         
         {/* Light grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 z-0 opacity-[0.08]"
           style={{
             backgroundImage:
               'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
@@ -69,7 +80,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           {/* Left: copy */}
-          <div className="flex flex-col items-start gap-7">
+          <div className="relative z-10 flex flex-col items-start gap-7">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,7 +102,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.9, ease: easeLux, delay: 0.08 }}
-              className="text-display-2xl font-semibold text-ink text-balance"
+              className="text-display-2xl text-balance font-semibold text-white"
             >
               Helping Med Spas become the{' '}
               <span className="relative whitespace-nowrap">
@@ -104,7 +115,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.2 }}
-              className="max-w-xl text-lg leading-relaxed text-ink/80 text-pretty"
+              className="max-w-xl text-pretty text-lg leading-relaxed text-white/85"
             >
               We build complete digital growth systems that increase bookings,
               dominate Google, and create premium online experiences — engineered
@@ -129,16 +140,16 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-ink/75"
+              className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-white/80"
             >
               <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-success" /> No long contracts
+                <CheckCircle2 className="h-4 w-4 text-gold-400" /> No long contracts
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-success" /> Med-spa specialists
+                <CheckCircle2 className="h-4 w-4 text-gold-400" /> Med-spa specialists
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-success" /> USA-focused
+                <CheckCircle2 className="h-4 w-4 text-gold-400" /> USA-focused
               </span>
             </motion.div>
           </div>
@@ -148,7 +159,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.94, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.1, ease: easeLux, delay: 0.25 }}
-            className="relative mx-auto w-full max-w-[560px] overflow-hidden lg:mx-0"
+            className="relative z-10 mx-auto w-full max-w-[560px] overflow-hidden lg:mx-0"
           >
             <HeroDashboard />
           </motion.div>
