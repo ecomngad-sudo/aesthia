@@ -31,7 +31,7 @@ export function Navbar() {
               aria-label="Aesthia Studio home"
             >
               <Logo />
-              <span className="text-[15px] font-semibold tracking-tight text-ink">
+              <span className="text-[15px] font-semibold tracking-tight text-white">
                 Aesthia Studio
               </span>
             </a>
@@ -41,18 +41,15 @@ export function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-ink/65 transition-all duration-300 hover:bg-gold-500/10 hover:text-gold-500 ring-focus"
-                >
-                  {item.label}
-                </a>
+                  className="rounded-full px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-gold-500/10 hover:text-yellow-500 ring-focus"
+              >
               ))}
             </div>
 
             <div className="hidden items-center gap-3 lg:flex">
               <a
                 href="#contact"
-                className="text-sm font-medium text-ink/70 transition-colors hover:text-gold-500 ring-focus"
-              >
+                className="text-sm font-medium text-white transition-colors hover:text-yellow-500 ring-focus">
                 Contact
               </a>
 
@@ -96,11 +93,11 @@ export function Navbar() {
               <div className="flex flex-col">
                 {NAV_ITEMS.map((item) => (
                   <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-2xl px-4 py-3 text-base font-medium text-ink/80 transition-all duration-300 hover:bg-gold-500/10 hover:text-gold-500"
-                  >
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="rounded-2xl px-4 py-3 text-base font-medium text-white transition-all duration-300 hover:bg-gold-500/10 hover:text-yellow-500"
+                    >
                     {item.label}
                   </a>
                 ))}
