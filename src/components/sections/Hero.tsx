@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+  import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -29,19 +29,21 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
+    <section id="top" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36 bg-canvas">
       {/* Ambient background with Video */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Background Video */}
         <video
           ref={videoRef}
           autoPlay
-          muted
           loop
+          muted
           playsInline
-          src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-sunset-26070-large.mp4"
           className="absolute inset-0 h-full w-full object-cover opacity-60"
-        />
+        >
+          <source src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787356183/hero-bg.mp4" type="video/mp4" />
+        </video>
+
         {/* Clean dark overlay for readability without fully blocking the video */}
         <div className="absolute inset-0 bg-black/40" />
 
@@ -62,7 +64,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           {/* Left: copy */}
           <div className="flex flex-col items-start gap-7">
@@ -175,7 +177,7 @@ function HeroDashboard() {
               <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
             </div>
             <div className="flex items-center gap-1.5 rounded-full bg-ink/[0.04] px-3 py-1 text-[10px] font-medium text-ink/50">
-              <Globe className="h-3 w-3" /> aesthiastudio.com
+              <Globe className="h-3 w-3" /> aesthia.online
             </div>
             <div className="w-10" />
           </div>
