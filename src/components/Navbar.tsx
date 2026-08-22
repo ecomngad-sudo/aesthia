@@ -11,7 +11,7 @@ export function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: -80, opacity: 0 }
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-x-0 top-0 z-50"
@@ -41,15 +41,18 @@ export function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-gold-500/10 hover:text-yellow-500 ring-focus"
-              >
+                  className="rounded-full px-4 py-2 text-sm font-medium text-neutral-200 transition-all duration-300 hover:bg-gold-500/10 hover:text-amber-400 ring-focus"
+                >
+                  {item.label}
+                </a>
               ))}
             </div>
 
             <div className="hidden items-center gap-3 lg:flex">
               <a
                 href="#contact"
-                className="text-sm font-medium text-white transition-colors hover:text-yellow-500 ring-focus">
+                className="rounded-full px-4 py-2 text-sm font-medium text-neutral-200 transition-all duration-300 hover:text-amber-400 ring-focus"
+              >
                 Contact
               </a>
 
@@ -72,7 +75,7 @@ export function Navbar() {
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
               onClick={() => setOpen(!open)}
-              className="lg:hidden rounded-full p-2 text-ink/60 hover:bg-ink/5 hover:text-ink transition-colors"
+              className="lg:hidden rounded-full p-2 text-white transition-all duration-300 hover:bg-white/10 hover:text-amber-400"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -96,7 +99,7 @@ export function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="rounded-2xl px-4 py-3 text-base font-medium text-white transition-all duration-300 hover:bg-gold-500/10 hover:text-yellow-500"
+                      className="rounded-2xl px-4 py-3 text-base font-medium text-neutral-200 transition-all duration-300 hover:bg-gold-500/10 hover:text-amber-400"
                     >
                     {item.label}
                   </a>

@@ -34,15 +34,16 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-ink pt-28 text-white sm:pt-32 lg:pt-36"
+      className="relative isolate overflow-hidden bg-ink pt-28 text-white sm:pt-32 lg:pt-36"
       style={{
-        backgroundImage: `linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.72)), url(${fallbackImage})`,
+        backgroundImage: `url(${fallbackImage})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}
     >
       {/* Ambient background with video */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-ink/90" />
         {!videoFailed && (
           <video
             ref={videoRef}
@@ -53,28 +54,16 @@ export function Hero() {
             poster={fallbackImage}
             src="/hero-bg.mp4"
             onError={() => setVideoFailed(true)}
-            className="absolute inset-0 h-full w-full object-cover -z-10"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         )}
 
         {/* Dark overlay keeps copy and CTAs readable above the motion video */}
-        <div className="absolute inset-0 z-0 bg-black/35" />
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* Subtle glow accents */}
-        <div className="absolute -top-40 left-1/2 z-0 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/20 blur-[120px]" />
-        <div className="absolute right-0 top-40 z-0 h-[420px] w-[420px] rounded-full bg-success/10 blur-[120px]" />
-        
-        {/* Light grid pattern */}
-        <div
-          className="absolute inset-0 z-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-            backgroundSize: '64px 64px',
-            maskImage: 'radial-gradient(ellipse 80% 60% at 50% 30%, #000, transparent)',
-            WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 30%, #000, transparent)',
-          }}
-        />
+        <div className="absolute -top-40 left-1/2 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-gold-100/20 blur-[120px]" />
+        <div className="absolute right-0 top-40 h-[420px] w-[420px] rounded-full bg-success/10 blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
@@ -85,6 +74,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: easeLux }}
+              className="relative z-10"
             >
               <Pill
                 icon={
@@ -102,7 +92,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.9, ease: easeLux, delay: 0.08 }}
-              className="text-display-2xl text-balance font-semibold text-white"
+              className="relative z-10 text-display-2xl text-balance font-semibold text-white"
             >
               Helping Med Spas become the{' '}
               <span className="relative whitespace-nowrap">
@@ -115,7 +105,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.2 }}
-              className="max-w-xl text-pretty text-lg leading-relaxed text-white/85"
+              className="relative z-10 max-w-xl text-pretty text-lg leading-relaxed text-white/90"
             >
               We build complete digital growth systems that increase bookings,
               dominate Google, and create premium online experiences — engineered
@@ -126,7 +116,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.32 }}
-              className="flex w-full flex-col gap-3 sm:flex-row sm:items-center"
+              className="relative z-10 flex w-full flex-col gap-3 sm:flex-row sm:items-center"
             >
               <Button size="lg" variant="gold" icon className="w-full sm:w-auto">
                 <Link to="/book">Claim Your Free Growth Audit</Link>
@@ -140,7 +130,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: easeLux, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-white/80"
+              className="relative z-10 flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-white/85"
             >
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-gold-400" /> No long contracts
@@ -174,12 +164,12 @@ export function Hero() {
 
 function HeroDashboard() {
   return (
-    <div className="relative h-[380px] min-[480px]:h-[460px] sm:h-[520px] lg:h-[560px]">
+    <div className="relative z-10 h-[380px] min-[480px]:h-[460px] sm:h-[520px] lg:h-[560px]">
       {/* Main dashboard card */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 7, ease: 'easeInOut', repeat: Infinity }}
-        className="absolute left-1/2 top-1/2 w-[92%] min-[480px]:w-[88%] -translate-x-1/2 -translate-y-1/2"
+        className="absolute left-1/2 top-1/2 z-10 w-[92%] min-[480px]:w-[88%] -translate-x-1/2 -translate-y-1/2"
       >
         <div className="card-luxury rounded-4xl p-5 shadow-luxury-lg">
           {/* Browser chrome */}
@@ -241,7 +231,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, -14, 0] }}
         transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity, delay: 0.4 }}
-        className="absolute -left-1 top-4 hidden min-[480px]:block sm:left-0 sm:top-6"
+        className="absolute -left-1 top-4 z-10 hidden min-[480px]:block sm:left-0 sm:top-6"
       >
         <div className="card-luxury w-36 rounded-2xl p-3 shadow-luxury min-[480px]:w-44 min-[480px]:p-3.5">
           <div className="flex items-center justify-between gap-2">
@@ -274,7 +264,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 7.5, ease: 'easeInOut', repeat: Infinity, delay: 0.8 }}
-        className="absolute -right-1 top-20 hidden min-[400px]:block sm:right-0 sm:top-24"
+        className="absolute -right-1 top-20 z-10 hidden min-[400px]:block sm:right-0 sm:top-24"
       >
         <div className="card-luxury w-40 rounded-2xl p-3.5 shadow-luxury">
           <div className="flex items-center gap-2">
@@ -295,7 +285,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 6.5, ease: 'easeInOut', repeat: Infinity, delay: 1.2 }}
-        className="absolute -left-1 bottom-4 hidden min-[520px]:block sm:left-2 sm:bottom-6"
+        className="absolute -left-1 bottom-4 z-10 hidden min-[520px]:block sm:left-2 sm:bottom-6"
       >
         <div className="card-luxury w-44 rounded-2xl p-3.5 shadow-luxury">
           <div className="flex items-center justify-between">
@@ -325,7 +315,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ y: [0, 14, 0] }}
         transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity, delay: 0.6 }}
-        className="absolute -right-1 bottom-8 hidden min-[520px]:block sm:right-1 sm:bottom-10"
+        className="absolute -right-1 bottom-8 z-10 hidden min-[520px]:block sm:right-1 sm:bottom-10"
       >
         <div className="card-luxury w-40 rounded-2xl p-3.5 shadow-luxury">
           <div className="flex items-center gap-2">
@@ -354,7 +344,7 @@ function HeroDashboard() {
       <motion.div
         animate={{ opacity: [0.4, 1, 0.4], scale: [0.9, 1.1, 0.9] }}
         transition={{ duration: 4, repeat: Infinity }}
-        className="absolute right-12 top-2"
+        className="absolute right-12 top-2 z-10"
       >
         <Sparkles className="h-5 w-5 text-gold-400" />
       </motion.div>
