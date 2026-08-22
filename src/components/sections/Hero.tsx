@@ -18,6 +18,7 @@ import { easeLux } from '@/lib/motion';
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const fallbackImage =
     'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80';
 
@@ -51,10 +52,12 @@ export function Hero() {
             muted
             loop
             playsInline
+            preload="auto"
             poster={fallbackImage}
             src="/hero-bg.mp4"
             onError={() => setVideoFailed(true)}
-            className="absolute inset-0 h-full w-full object-cover"
+            onPlaying={() => setIsPlaying(true)}
+            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
           />
         )}
 
