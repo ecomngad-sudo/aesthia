@@ -32,15 +32,20 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-36">
       {/* Background Video Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
-          src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787356183/hero-bg.mp4"
-        />
+      <video
+  ref={videoRef}
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  className="absolute inset-0 h-full w-full object-cover opacity-60 z-0 pointer-events-none"
+>
+  <source 
+    src="https://res.cloudinary.com/d7lgzoqr/video/upload/q_auto,f_auto/v1787356183/hero-bg.mp4" 
+    type="video/mp4" 
+  />
+</video>
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-black/40" />
 
