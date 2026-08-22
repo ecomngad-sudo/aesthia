@@ -33,16 +33,21 @@ export function Hero() {
       {/* Ambient background with Video */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Background Video */}
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
-        >
-          <source src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787356183/hero-bg.mp4" type="video/mp4" />
-        </video>
+       <video
+  ref={videoRef}
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  poster="https://res.cloudinary.com/d7lgzoqr/video/upload/so_0/v1787356183/hero-bg.jpg"
+  className="absolute inset-0 h-full w-full object-cover opacity-60 z-0"
+>
+  <source 
+    src="https://res.cloudinary.com/d7lgzoqr/video/upload/f_auto:video,q_auto/v1787356183/hero-bg.mp4" 
+    type="video/mp4" 
+  />
+</video>
 
         {/* Clean dark overlay for readability without fully blocking the video */}
         <div className="absolute inset-0 bg-black/40" />
