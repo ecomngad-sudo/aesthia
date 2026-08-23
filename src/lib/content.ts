@@ -161,7 +161,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   name: 'Luxury Med Spa',
   city: 'Premium Growth Campaign',
   image:
-    'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80',
+    'https://res.cloudinary.com/d7lgzoqr/image/upload/v1787525581/pexels-arina-krasnikova-6663574.jpg',
 
   challenge:
     'The clinic had a beautiful in-person experience, but its online presence failed to generate consistent premium consultations.',
