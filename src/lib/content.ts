@@ -182,7 +182,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   name: 'Elite Aesthetic Clinic',
   city: 'Local SEO Growth System',
   image:
-    'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80',
+    'https://res.cloudinary.com/d7lgzoqr/image/upload/v1787528030/pexels-anntarazevich-6560265.jpg',
 
   challenge:
     'The clinic was invisible on Google Maps despite offering premium treatments and an excellent patient experience.',
@@ -203,7 +203,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   name: 'Élysia Skin & Laser',
   city: 'Miami, FL',
   image:
-    'https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=1200&q=80',
+    'https://res.cloudinary.com/d7lgzoqr/image/upload/v1787528263/pexels-ganinph-7772642.jpg',
 
   challenge:
     'The clinic had exceptional treatments but struggled to attract affluent patients online. Their website looked generic and converted very few visitors into consultations.',
