@@ -19,8 +19,6 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const fallbackImage =
-    'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80';
 
   useEffect(() => {
     if (videoRef.current && !videoFailed) {
@@ -36,11 +34,6 @@ export function Hero() {
     <section
       id="top"
       className="relative isolate overflow-hidden bg-ink pt-28 text-white sm:pt-32 lg:pt-36"
-      style={{
-        backgroundImage: `url(${fallbackImage})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-      }}
     >
       {/* Ambient background with video */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -53,7 +46,7 @@ export function Hero() {
             loop
             playsInline
             preload="auto"
-            src="/hero-bg.mp4"
+            src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787444590/hero-bg.mp4.mp4"
             onError={() => setVideoFailed(true)}
             onPlaying={() => setIsPlaying(true)}
             className="absolute inset-0 h-full w-full object-cover bg-black transition-opacity duration-700"
