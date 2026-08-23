@@ -46,10 +46,10 @@ export function Hero() {
             loop
             playsInline
             preload="auto"
-            src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787444590/hero-bg.mp4.mp4"
+            src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787447691/hero-bg.mp4.mp4"
             onError={() => setVideoFailed(true)}
             onPlaying={() => setIsPlaying(true)}
-            className="absolute inset-0 h-full w-full object-cover bg-black transition-opacity duration-700"
+            className="absolute inset-0 w-full h-full object-cover object-center bg-black transition-opacity duration-700"
           />
         )}
 
