@@ -42,15 +42,17 @@ export function Hero() {
           <video
             ref={videoRef}
             autoPlay
-            muted
             loop
+            muted
             playsInline
             preload="auto"
-            src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787447691/hero-bg.mp4.mp4"
+            fetchPriority="high"
             onError={() => setVideoFailed(true)}
             onPlaying={() => setIsPlaying(true)}
             className="absolute inset-0 w-full h-full object-cover object-center bg-black transition-opacity duration-700"
-          />
+          >
+            <source src="https://res.cloudinary.com/d7lgzoqr/video/upload/v1787447691/hero-bg.mp4.mp4" type="video/mp4" />
+          </video>
         )}
 
         {/* Dark overlay keeps copy and CTAs readable above the motion video */}
