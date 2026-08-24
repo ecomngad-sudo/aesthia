@@ -19,10 +19,10 @@ export function Navbar() {
       <div className="w-full transition-all duration-500">
         {/* Floating frosted glass capsule bar */}
         <div
-          className={`mx-4 mt-4 transition-all duration-500 rounded-full border shadow-lg ${
+          className={`mx-4 mt-4 transition-all duration-500 rounded-full border shadow-sm ${
             scrolled
-              ? 'bg-black/80 text-white backdrop-blur-lg border-white/10'
-              : 'bg-white/10 backdrop-blur-md border-white/20'
+              ? 'bg-black/20 backdrop-blur-xl border-white/10'
+              : 'bg-white/20 backdrop-blur-xl border-white/30'
           }`}
         >
           <nav className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between py-3">
