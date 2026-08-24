@@ -40,11 +40,11 @@ export function Testimonials() {
               </blockquote>
 
               <figcaption className="flex items-center gap-3 border-t border-line pt-5">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-gold-500/20 shadow-lg">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-gold-500/20 shadow-lg">
                   <img
                     src={t.image}
                     alt={t.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-full w-full rounded-full object-cover opacity-100 filter-none transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
                 </div>
