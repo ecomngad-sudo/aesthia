@@ -190,6 +190,7 @@ function HeroDashboard() {
                 alt="Luxury med spa website preview"
                 className="h-full w-full object-cover"
                 loading="eager"
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">

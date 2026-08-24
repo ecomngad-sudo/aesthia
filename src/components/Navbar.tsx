@@ -21,8 +21,8 @@ export function Navbar() {
         <div
           className={`mx-4 mt-4 transition-all duration-500 rounded-full ${
             scrolled
-              ? 'bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg'
-              : 'bg-transparent border-transparent shadow-none backdrop-blur-none'
+              ? 'bg-white/10 backdrop-blur-xl border border-white/20'
+              : 'bg-transparent border-transparent'
           }`}
         >
           <nav className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between py-3">
