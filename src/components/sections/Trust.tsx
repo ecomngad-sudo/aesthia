@@ -4,7 +4,7 @@ import { TRUST_ITEMS } from '@/lib/content';
 export function Trust() {
   const items = [...TRUST_ITEMS, ...TRUST_ITEMS];
   return (
-    <section className="relative py-16 sm:py-20">
+    <section className="relative py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <motion.p
           initial={{ opacity: 0 }}

@@ -20,7 +20,7 @@ interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
 }
 
 const base =
-  'group relative inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight ring-focus transition-all duration-300 will-change-transform';
+  'group relative inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight min-h-[44px] ring-focus transition-all duration-300 will-change-transform';
 
 const variants: Record<Variant, string> = {
   gold: 'btn-gold hover:shadow-[0_12px_36px_rgba(212,175,55,0.38)] hover:-translate-y-0.5',

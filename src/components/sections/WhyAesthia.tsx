@@ -6,7 +6,7 @@ import { staggerContainer, itemFadeUp } from '@/lib/motion';
 
 export function WhyAesthia() {
   return (
-    <section id="about" className="relative py-24 sm:py-32">
+    <section id="about" className="relative py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
           align="center"

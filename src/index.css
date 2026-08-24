@@ -41,6 +41,11 @@
   /* Hide scrollbar but keep scroll */
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Mobile touch optimization: eliminate 300ms tap delay */
+  button, a, [role="button"], input, select, textarea, [tabindex]:not([tabindex="-1"]) {
+    touch-action: manipulation;
+  }
 }
 
 @layer components {

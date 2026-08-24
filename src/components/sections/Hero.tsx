@@ -33,7 +33,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-ink pt-28 text-white sm:pt-32 lg:pt-36"
+      className="relative isolate overflow-hidden bg-ink pt-24 sm:pt-28 text-white md:pt-32 lg:pt-36"
     >
       {/* Ambient background with video */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">

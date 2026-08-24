@@ -6,7 +6,7 @@ import { staggerContainer, itemFadeUp } from '@/lib/motion';
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="relative py-24 sm:py-32">
+    <section id="case-studies" className="relative py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           align="center"
@@ -50,7 +50,7 @@ function CaseCard({
     >
       <div className={`grid gap-0 lg:grid-cols-2 ${flip ? 'lg:[direction:rtl]' : ''}`}>
         {/* Visual */}
-        <div className="relative min-h-[320px] overflow-hidden [direction:ltr]">
+        <div className="relative min-h-[200px] sm:min-h-[320px] overflow-hidden [direction:ltr]">
           <motion.img
             src={cs.image}
             alt={`${cs.name} — luxury med spa interior`}
