@@ -250,7 +250,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Dr. Elena Vasquez',
     role: 'Founder, Lumière Aesthetics',
   image:
-      'https://res.cloudinary.com/d7lgzoqr/image/upload/v1787529324/pexels-tima-miroshnichenko-8376221.jpg',
+      'https://res.cloudinary.com/d7lgzoqr/image/upload/q_auto:best,w_400,h_400,c_fill/v1787529324/pexels-tima-miroshnichenko-8376221.jpg',
     quote:
       'Aesthia did not build us a website. They built us a patient acquisition system. Our consult calendar has never been this full — and the patients we are attracting are exactly the premium clients we wanted.',
   },
@@ -258,7 +258,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Marcus Reed',
     role: 'CEO, Maison Dermé',
     image:
-      'https://res.cloudinary.com/d7lgzoqr/image/upload/v1787529460/pexels-tima-miroshnichenko-6010869.jpg',
+      'https://res.cloudinary.com/d7lgzoqr/image/upload/q_auto:best,w_400,h_400,c_fill/v1787529460/pexels-tima-miroshnichenko-6010869.jpg',
     quote:
       'Across three locations we were invisible on Google. Now we own the map pack. The ROI is not even close — this is the best business decision we have made in five years.',
   },
@@ -266,7 +266,7 @@ export const TESTIMONIALS: Testimonial[] = [
   name:  'Dr. Michael Carter',
   role: 'Medical Director, Élysia Skin & Laser',
   image:
-    'https://res.cloudinary.com/d7lgzoqr/image/upload/v1787529499/pexels-konrads-photo-32254658.jpg',
+    'https://res.cloudinary.com/d7lgzoqr/image/upload/q_auto:best,w_400,h_400,c_fill/v1787529499/pexels-konrads-photo-32254658.jpg',
   quote:
     'The level of taste and strategy is something I did not know existed in marketing. Our brand finally looks as premium online as it feels in person — and the bookings prove it.',
 },
