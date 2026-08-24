@@ -31,7 +31,7 @@ export function Testimonials() {
             <motion.figure
               key={t.name}
               variants={itemFadeUp}
-              className="group relative flex flex-col gap-6 rounded-4xl border border-line bg-gradient-to-br from-white to-canvas-warm/40 p-8 shadow-luxury transition-all duration-500 hover:-translate-y-2 hover:border-gold-500/20 hover:bg-white hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)] sm:p-9"
+              className="group relative flex flex-col gap-6 rounded-4xl border border-line bg-gradient-to-br from-white to-canvas-warm/40 p-8 shadow-luxury backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-gold-500/20 hover:bg-white hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)] sm:p-9"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-500/10 to-gold-500/5 border border-gold-500/15">   <Quote className="h-6 w-6 text-gold-500" /> </div>
 
@@ -40,11 +40,12 @@ export function Testimonials() {
               </blockquote>
 
               <figcaption className="flex items-center gap-3 border-t border-line pt-5">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-gold-500/20 shadow-lg">
+                <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-gold-500/20 shadow-lg">
                   <img
                     src={t.image}
                     alt={t.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                 </div>
                 <div className="flex-1">
