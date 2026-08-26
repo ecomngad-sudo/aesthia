@@ -4,8 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { Trust } from '@/components/sections/Trust';
-import { Problem } from '@/components/sections/Problem';
-import { Solution } from '@/components/sections/Solution';
 import { WhyAesthia } from '@/components/sections/WhyAesthia';
 import { CaseStudies } from '@/components/sections/CaseStudies';
 import { Process } from '@/components/sections/Process';
@@ -29,7 +27,7 @@ export default function App() {
   });
 
   return (
-    <div className="relative min-h-screen bg-canvas text-ink">
+    <div className="relative min-h-screen bg-canvas text-ink overflow-x-hidden">
       <motion.div
         style={{ scaleX: progress }}
         className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500"
@@ -37,7 +35,7 @@ export default function App() {
 
       <Navbar />
 
-      <main>
+      <main className="overflow-x-hidden">
         <Routes>
           <Route
             path="/"
@@ -45,8 +43,6 @@ export default function App() {
               <>
                 <Hero />
                 <Trust />
-                <Problem />
-                <Solution />
                 <WhyAesthia />
                 <CaseStudies />
                 <Process />
@@ -68,4 +64,3 @@ export default function App() {
       <FreeAuditModal />
     </div>
   );
-}
